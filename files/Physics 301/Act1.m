@@ -85,5 +85,6 @@ J = imread([pathname,filename]);
     colorsJ = gJint(:) + (rJint(:)-1)*BINS;
     HB = hist(colorsJ);
     HBImage = reshape(HB,size(J,[1,2]));
+    HBImage = bwareaopen(HBImage,300);
     figure (2); imagesc(HBImage); 
     colormap (gray);
